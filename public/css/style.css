@@ -1,0 +1,84 @@
+/* Variables para cambiar colores rápido */
+:root {
+    --primary-color: #2c3e50;
+    --success-color: #27ae60;
+    --danger-color: #e74c3c;
+    --bg-body: #f4f7f6;
+}
+
+body {
+    font-family: sans-serif;
+    background-color: var(--bg-body);
+    padding: 40px;
+}
+
+.card-container {
+    max-width: 1000px;
+    margin: auto;
+    background: white;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.tabla-pagos {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.tabla-pagos th {
+    background: var(--primary-color);
+    color: white;
+    padding: 12px;
+    text-align: left;
+}
+
+.tabla-pagos td {
+    padding: 10px;
+    border-bottom: 1px solid #eee;
+}
+
+.btn {
+    padding: 8px 15px;
+    border-radius: 4px;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.btn-danger {
+    background: var(--danger-color);
+    color: white;
+}
+.btn-danger:hover{
+cursor: pointer;
+}
+
+.btn-success {
+    background: var(--success-color);
+    color: white;
+}
+
+.negrita {
+    font-weight: bold;
+}
+
+
+#crearPago{
+    background-color: blue;
+    color: white;
+    text-decoration: none;
+    display: inline-block;
+    padding: 0.3em;
+    border: black solid 0.2em;
+}
+
+#verpagos-btn{
+     background-color: green;
+    color: white;
+    text-decoration: none;
+    display: inline-block;
+    padding: 0.3em;
+    border: black solid 0.2em;
+}

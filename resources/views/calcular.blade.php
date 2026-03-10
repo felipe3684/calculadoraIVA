@@ -6,11 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Calcular IVA</title>
-<style>
-    .negrita{
-        font-weight: bold;
-    }
-</style>
+<link rel="stylesheet" href="{{ asset('../css/style.css') }}">
 </head>
 <body>
 
@@ -19,12 +15,12 @@
     <label for="concepto_id">Concepto</label>
     <input type="text" id="concepto_id" name="concepto" placeholder="pago a ..">
     <label for="cantidad_id">Cantidad:</label>
-    <input id="cantidad_id" name="cantidad" type="number" step="0.01" min="0" placeholder="25" value="{{ old('cantidad') }}"><span>€</span>
+    <input id="cantidad_id" name="cantidad" type="number" step="0.01" min="0" placeholder="25"><span>€</span>
     <select name="iva" id="iva">
-        <option value="21" @selected(old('iva')==21)>21%</option>
-        <option value="10" @selected(old('iva')==10)>10%</option>
-        <option value="4" @selected(old('iva')==4)>4%</option>
-        <option value="0" @selected(old('iva')==0)>0%</option>
+        <option value="21">21%</option>
+        <option value="10">10%</option>
+        <option value="4">4%</option>
+        <option value="0">0%</option>
 
     </select>
     <button>Enviar</button>
@@ -36,6 +32,6 @@
         </div>
     @endisset
 
-    <p>Ver los pagos actuales <a href="{{route('pagos.index') }}">Pagos</a></p>
+    <p><a href="{{route('pagos.index') }}" id="verpagos-btn">Ver Pagos</a></p>
 </body>
 </html>
