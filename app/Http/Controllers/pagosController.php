@@ -12,10 +12,17 @@ class pagosController extends Controller
     public function verPagos(){
     $pagos =DB::table('pagos')->select([
     'id','concepto','cantidad','iva','tIva','total'
-    ])->orderBy('id','desc')->get();
+    ])->orderBy('id','desc')->limit('10')->get();
+
+    $totalCantidad = DB::table('pagos')->sum('cantidad');
+    $totalIva = DB::table('pagos')->sum('tIva');
+    $totalPagos = DB::table('pagos')->sum('total');
 
     return view('verpagos',[
         "pagos" => $pagos,
+        "cantidadT"=> $totalCantidad,
+        "ivaTotal" => $totalIva,
+        "pagoTotal"=> $totalPagos,
     ]);
     }
 

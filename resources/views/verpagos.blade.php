@@ -47,6 +47,14 @@
 
         @endforeach
         </tr>
+        <tr>
+            <td>Totales:</td>
+            <td>{{ number_format($cantidadT, 2, ',', '.') }} €</td>
+            <td></td>
+            <td>{{ number_format($ivaTotal, 2, ',', '.') }} €</td>
+            <td>{{ number_format($pagoTotal, 2, ',', '.') }} €</td>
+            <td></td>
+        </tr>
     </table>
 </body>
 
