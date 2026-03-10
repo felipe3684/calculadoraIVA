@@ -36,6 +36,6 @@
         </div>
     @endisset
 
-    <p>Ver los pagos actuales <a href="{{route('pagos') }}">Pagos</a></p>
+    <p>Ver los pagos actuales <a href="{{route('pagos.index') }}">Pagos</a></p>
 </body>
 </html>

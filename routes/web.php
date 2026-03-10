@@ -12,4 +12,5 @@ Route::get('/', function () {
 Route::get('/calcular-iva',[pagosController::class,'index'])->name('form.iva');
 Route::post('/calcular-iva',[pagosController::class,'calcularConIva'])->name('calcularconiva');
 
-Route::get('/pagos',[pagosController::class, 'verPagos'])->name('pagos');
+Route::get('/pagos',[pagosController::class, 'verPagos'])->name('pagos.index');
+Route::post('/pagos/{id}',[pagosController::class,'deletePago'])->name('borrarPago');

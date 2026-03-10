@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\DB;
 
 class pagosController extends Controller
 {
-
+    //VER PAGOS
     //visualizar los pagos
     public function verPagos(){
     $pagos =DB::table('pagos')->select([
@@ -19,10 +19,13 @@ class pagosController extends Controller
     ]);
     }
 
+
     //ver formulario para crear pagos
     public function index(){
         return view('calcular');
     }
+
+    //CREAR PAGOS
     //persistencia del formulario para crear pagos
     public function calcularConIva(Request $request){
 
@@ -50,16 +53,18 @@ class pagosController extends Controller
             "updated_at" => now(),
         ]);
 
-        //Formato para mostrar correctamente en vista en €
-        $cantidadF = number_format($cantidad,2,',','.');
-        $tIvaF = number_format($tIva,2,',','.');
 
-        $resultadoF= number_format($resultado,2,',','.');
-        return view('calcular',[
-            'concepto' => $concepto,
-            'res'=>$resultadoF,
-            'cantidad' => $cantidadF,
-            'iva' => $tIvaF]);
+        return redirect()->route('pagos.index')->with("message","Pago realizado con éxito");
 
+    }
+
+    //Eliminar Pagos
+    public function deletePago(Request $request){
+
+
+
+    $pagobool = DB::table("pagos")->where("id","=",$request->id)->delete();
+
+    return redirect()->route('pagos.index');
     }
 }
