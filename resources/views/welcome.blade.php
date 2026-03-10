@@ -13,6 +13,8 @@
     <div class="card">
         <h1>📊 Mi Calculadora de IVA Profesional</h1>
         <p>Estado del sistema: <strong>Listo para calcular.</strong></p>
+        <p>Inicia en el siguiente enlace: <a href="{{ route('form.iva') }}">Calcular</a></p>
+
     </div>
 </body>
 </html>
